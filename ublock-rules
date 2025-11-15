@@ -1,39 +1,54 @@
-youtube.com##div.yt-lockup-view-model:style(display:flex !important; flex-direction:row !important; align-items:flex-start !important; margin-top:4px !important; margin-bottom:4px !important;)
 
-youtube.com##a.yt-lockup-view-model__content-image:style(flex:0 0 235px !important; width:auto !important; height:auto !important; margin-right:12px !important;)
+! === WATCH NEXT — CLASSIC STACKED & CLEAN LAYOUT ===
 
-youtube.com##yt-lockup-metadata-view-model:style(flex:1 1 auto !important; display:flex !important; flex-direction:column !important; align-items:flex-start !important;)
+! Keep horizontal layout (thumb left, content right)
+youtube.com##ytd-watch-next-secondary-results-renderer div.yt-lockup-view-model:style(display:flex !important; flex-direction:row !important; align-items:flex-start !important; gap:8px !important; margin-top:6px !important; margin-bottom:6px !important;)
 
-youtube.com##yt-formatted-string.yt-lockup-title:style(order:0 !important;)
+! Thumbnail fixed width, top aligned
+youtube.com##ytd-watch-next-secondary-results-renderer a.yt-lockup-view-model__content-image:style(flex:0 0 200px !important; width:auto !important; height:auto !important; margin:0 !important;)
 
-youtube.com##yt-img-shadow:style(order:1 !important; margin-top:2px !important;)
+! Metadata column: stacked vertically, no extra gaps
+youtube.com##ytd-watch-next-secondary-results-renderer yt-lockup-metadata-view-model:style(display:flex !important; flex-direction:column !important; justify-content:flex-start !important; align-items:flex-start !important; gap:3px !important; margin:0 !important; padding:0 !important;)
 
-youtube.com##yt-formatted-string.yt-lockup-byline:style(order:2 !important; margin-top:2px !important; margin-left:4px !important;)
 
-youtube.com##span.yt-lockup-meta-info:style(order:3 !important; margin-top:2px !important;)
+! === TITLE MUST BE FIRST ELEMENT ===
+youtube.com##ytd-watch-next-secondary-results-renderer yt-formatted-string.yt-lockup-title:style(order:0 !important; margin:0 !important; padding:0 !important; font-size:14px !important; line-height:1.2 !important;)
 
-youtube.com##.ytd-item-section-renderer #contents:style(column-gap:8px !important; row-gap:8px !important;)
 
-youtube.com##.ytd-item-section-renderer .yt-lockup-view-model--wrapper:style(max-width:1400px !important; margin-left:auto !important; margin-right:auto !important; padding-left:0 !important; padding-right:0 !important;)
+! === AVATAR WRAPPER — MOVE BELOW TITLE ===
+youtube.com##ytd-watch-next-secondary-results-renderer .yt-lockup-metadata-view-model__avatar:style(order:1 !important; margin:0 6px 0 0 !important; display:inline-flex !important; align-items:center !important;)
 
-youtube.com##yt-formatted-string.yt-lockup-title:style(font-size:14px !important; line-height:1.2 !important;)
-youtube.com##yt-formatted-string.yt-lockup-byline:style(font-size:12px !important; line-height:1.2 !important;)
-youtube.com##span.yt-lockup-meta-info:style(font-size:12px !important; line-height:1.2 !important;)
+! Avatar element inside — no displacement needed
+youtube.com##ytd-watch-next-secondary-results-renderer yt-decorated-avatar-view-model:style(position:static !important; margin:0 !important; display:inline-block !important; vertical-align:middle !important;)
 
-youtube.com##span.ytd-thumbnail-overlay-time-status-renderer:style(bottom:4px !important; right:4px !important; font-size:12px !important;)
 
-youtube.com##yt-decorated-avatar-view-model:style(position:relative !important; top:60px !important; display:inline-block !important;)
+! === CHANNEL NAME — NEXT TO AVATAR ===
+youtube.com##ytd-watch-next-secondary-results-renderer yt-formatted-string.yt-lockup-byline:style(order:1 !important; margin:0 !important; display:inline-block !important; vertical-align:middle !important; font-size:12px !important; line-height:1.2 !important;)
 
-youtube.com##yt-decorated-avatar-view-model:style(margin-bottom:2px !important;)
 
-!/* Move avatar further down */
-youtube.com##yt-decorated-avatar-view-model.ytDecoratedAvatarViewModelHost:style(position:relative !important; top:85px !important; display:inline-block !important; vertical-align:middle !important; z-index:10 !important;)
+! === VIEWS + UPLOAD DATE AT THE BOTTOM ===
+youtube.com##ytd-watch-next-secondary-results-renderer span.yt-lockup-meta-info:style(order:2 !important; margin:0 !important; font-size:12px !important; line-height:1.2 !important; display:inline-block !important; white-space:nowrap !important;)
 
-!/* Shift channel name right with higher specificity */
-youtube.com##yt-formatted-string.yt-lockup-byline.style-scope.ytd-channel-name:style(margin-left:50px !important; display:inline-block !important; vertical-align:middle !important; z-index:10 !important;)
+! Add classic dot separator between views and date
+youtube.com##ytd-watch-next-secondary-results-renderer span.yt-lockup-meta-info::before:style(content:" • " !important;)
 
-!/* Move avatar down */
-youtube.com##yt-decorated-avatar-view-model.ytDecoratedAvatarViewModelHost:style(position:relative !important; top:75px !important; display:inline-block !important; vertical-align:middle !important; z-index:10 !important;)
 
-!/* Shift channel name right */
-youtube.com##.yt-lockup-metadata-view-model__metadata > yt-content-metadata-view-model > div > span.yt-core-attributed-string:style(margin-left:50px !important; display:inline-block !important; vertical-align:middle !important; z-index:10 !important;)
+! Timestamp overlay stays compact
+youtube.com##ytd-watch-next-secondary-results-renderer span.ytd-thumbnail-overlay-time-status-renderer:style(bottom:4px !important; right:4px !important; font-size:12px !important;)
+
+! === FIX: Align avatar left of channel name ===
+youtube.com##ytd-watch-next-secondary-results-renderer .yt-lockup-metadata-view-model__avatar:style(order:0 !important; margin:0 6px 0 0 !important; display:inline-flex !important; vertical-align:middle !important;)
+
+! Make channel icon slightly smaller
+youtube.com##ytd-watch-next-secondary-results-renderer .yt-spec-avatar-shape--avatar-size-medium:style(width:25px !important; height:25px !important; transform:scale(0.85) !important; transform-origin:center !important;)
+
+! Force channel name and icon to stay on same line & align center
+youtube.com##ytd-watch-next-secondary-results-renderer yt-lockup-metadata-view-model:style(gap:4px !important; flex-wrap:nowrap !important;)
+
+! Ensure views + upload date remain below channel row
+youtube.com##ytd-watch-next-secondary-results-renderer span.yt-lockup-meta-info:style(order:2 !important; display:block !important; margin-top:2px !important;)
+
+
+
+! youtube.com###contents:style(border: 3px solid red !important;)
+

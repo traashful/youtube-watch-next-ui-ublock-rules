@@ -73,6 +73,8 @@ www.youtube.com##yt-content-metadata-view-model.yt-content-metadata-view-model--
 ! Ensure metadata container remains flexible and aligned
 www.youtube.com##.yt-lockup-metadata-view-model__metadata:style(display: inline-flex !important; align-items: center !important; flex-wrap: wrap !important)
 
+! Add 5px right margin to channel icons on the YouTube homepage ONLY
+www.youtube.com##ytd-rich-grid-renderer .yt-lockup-metadata-view-model__avatar:style(margin-right:5px !important)
 
 ! youtube.com###contents:style(border: 3px solid red !important;)
 
